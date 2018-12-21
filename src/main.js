@@ -1,8 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import wrap from '@vue/web-component-wrapper';
+import VueWebComponent from './components/WebmdComponent';
 
-Vue.config.productionTip = false
+const CustomElement = wrap(Vue, VueWebComponent);
 
-new Vue({
-  render: h => h(App)
-}).$mount('#app')
+window.customElements.define('webmd-custom-element', CustomElement);
